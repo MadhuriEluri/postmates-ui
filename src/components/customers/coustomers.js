@@ -30,7 +30,7 @@ class Customers extends Component {
       return (
     <div className="Customers">   
     <div  className="pm-button-customer">
-        <Button bsStyle="primary" onClick={ () => this.handleClick('/Landing')}>Navigate To Home</Button>
+        <Button bsStyle="primary" href="/Landing">Navigate To Home</Button>
     </div>       
         <Table striped bordered condensed hover>
         <thead>
