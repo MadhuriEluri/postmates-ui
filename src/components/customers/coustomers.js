@@ -12,25 +12,25 @@ class Customers extends Component {
         this.getCustomerInfo();
     }
     getCustomerInfo() {
-        var prop = "cost", resultsToBeDisplayed = 30;
-        customerData.deliveries.sort((x,y) => {
+        var prop = "cost", resultsToBeDisplayed = 30, 
+        sortedData = customerData.deliveries.slice(); /**Deep Copy of an array in Javascript */
+        sortedData.sort((x,y) => {
             if (parseFloat(x[prop]) === parseFloat(y[prop])) return 0;
             else if (parseFloat(x[prop]) < parseFloat(y[prop])) return 1;
             else return -1;
         })
-        this.bestCustomers = customerData.deliveries.slice(0,resultsToBeDisplayed)
+        this.bestCustomers = sortedData.slice(0,resultsToBeDisplayed)
         return this.bestCustomers;
     };
-
     handleClick(path) {
         this.props.history.push(path);
-    }
+      }
 
    render() {
       return (
     <div className="Customers">   
     <div  className="pm-button-customer">
-        <Button bsStyle="primary" href="/Landing">Navigate To Home</Button>
+        <Button bsStyle="primary" onClick={() => this.handleClick('/Landing')}>Navigate To Home</Button>
     </div>       
         <Table striped bordered condensed hover>
         <thead>

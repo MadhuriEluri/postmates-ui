@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -20,8 +19,9 @@ class App extends Component {
         </header>
         <Router>
         <div>
-          <Route path='/Customers' component ={Customers} />
+          <Route exact path='/' component={Landing}/>
           <Route path='/Landing' component = {Landing} />
+          <Route path='/Customers' component ={Customers} />
         </div>  
         </Router>
       </div>
