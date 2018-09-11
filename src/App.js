@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 
-import Customers from './components/customers/coustomers'; 
+import Customers from './components/customers/customers'; 
 import Landing from './components/landing/landing';
 
 class App extends Component {
@@ -14,7 +14,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">Welcome to Postmates</h1>
         </header>
         <Router>
