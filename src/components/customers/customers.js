@@ -6,13 +6,14 @@ import {withRouter} from 'react-router-dom';
 
 class Customers extends Component {
 
+    /** Top best Customers(30) */
     bestCustomers;
     constructor(props){
         super(props);
         this.getCustomerInfo();
     }
 
-    /** This method returns highest number of deliveries in past 30 days*/
+    /** This method returns 30 Customers with the highest number of deliveries in past 30 days*/
     getCustomerInfo() {
         var resultsToBeDisplayed = 30, prop = "count", customerDeliveries = this.getDeliveriesFrom30Days(),
             modeMap = {};
