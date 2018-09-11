@@ -29,7 +29,7 @@ class Customers extends Component {
         /**Converts modeMap into array of Objects */
         this.bestCustomers = Object.entries(modeMap).map(([name,count]) => ({name,count}));
 
-        this.bestCustomers.sort((x, y) => { return (x[prop])-(y[prop])});
+        this.bestCustomers.sort((x, y) => { return (y[prop])-(x[prop])});
 
         this.bestCustomers = this.bestCustomers.slice(0,resultsToBeDisplayed)
         console.log(this.bestCustomers, customerDeliveries)
